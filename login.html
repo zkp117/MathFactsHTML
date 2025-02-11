@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <p class="title">Play2Learn Logo</p>
+ <!-- links in header beginning-->
+ <div style="text-align:right;">
+    <a href="index.html">Home</a> |
+    <div class="dropdown">
+        <u style="color: darkblue;">Games</u> |
+        <div class="ddcontent">
+            <a href="math-facts.html">Math Facts</a>
+            <a href="#">Anagram Hunt</a>
+        </div>  
+    </div>
+    <a href="about.html">About</a> |
+    <a href="login.html">Login</a>
+</div>
+<!-- links in header ending -->
+
+<hr class="tline">
+
+<!-- login section beginning -->
+<form onsubmit="loginSubmitted()" id="login">
+    <h2>Login</h2>
+    <div style="position:absolute; top:100px; left:100px; text-align: left;">
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email" name="email" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="text" placeholder="Password" name="password" required>
+        <br>
+        <button>Login</button>
+        <br>
+        <br>
+        <div style="font-size: 16px;">
+            <a onclick="showRegister()">Need an account? Register.</a>
+        </div>
+    </div>
+</form>
+
+<!-- login section ending-->
+
+<form onsubmit="registerSubmitted()" style="display:none;" id="register">
+    <h3>Register</h3>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email" name="email" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="text" placeholder="Password" name="password" required>
+        <br>
+        <label for="retype-password">Retype Password</label>
+        <input tye="text" placeholder="Retype chosen password" name="Retype password" required>
+        <br>
+        <div style="font-size:11px;">
+            <input type="checkbox" id="age" name="age" value="Age" required>
+            <label for="age">I am over 13 years old or my parent / guardian is signing me up</label>
+            <br>
+            <input type="checkbox" id="agreement" name="agreement" value="Agreement" required>
+            <label for="agreement">I have read the terms and conditions</label>
+        </div>
+        <br>
+        <br>
+        <button style="position:absolute; left:25px;">Register</button>
+        <br>
+        <br>
+        <a style="font-size: 15px;" href="http://localhost:52330/website/login.html">Have an account? Log in</a>
+    </div>
+</form>
+
+<hr class="bline">
+
+    <!-- ssn links beginning -->
+    <div id="ssn">
+        <p style="position:absolute; width:100px; right:250px; font-size: 10px;">© 2024 Play2Learn</p>
+        <a href="contact-us.html"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-contact-us.png"></a>
+        <a href="https://instagram.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-instagram.png"></a>
+        <a href="https://twitter.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-twitter.png"></a>
+        <a href="https://facebook.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-facebook.png"></a>
+    </div>
+    <!-- ssn links ending -->
+
+    <script>
+        function showRegister() {
+    var x = document.getElementById("register");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+  }
+
+  function loginSubmitted() {
+        alert("Thank you logging in!");
+    }
+
+    function registerSubmitted() {
+        alert("Thank you for signing up! Please check for email for confirmation");
+    }
+    </script>
+
+</body>
+

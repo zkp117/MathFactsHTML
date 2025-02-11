@@ -1,0 +1,260 @@
+body{
+    background-image: linear-gradient(rgb(255, 204, 204),rgb(242, 218, 255));
+    background-attachment: fixed;
+    font-size:25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    color:white;
+    background-color: darkgreen;
+    border-radius: 25px;
+    width: 75px;
+    height: 30px;
+}
+
+.gamebttn{
+    text-align: center;
+    color:white;
+    background-color:green;
+    border-radius: 25px;
+    width: 65px;
+    height: 45px;
+    font-size: 18px;
+
+}
+
+/* Play2Go Logo title*/
+.title{
+    font-size:30px;
+    font-weight: lighter;
+    position:absolute;
+    top:-22px;
+}
+
+/* unvisited link*/
+a:link{
+    color:blue;
+}
+
+/* visited link */
+a:visited{
+    color: darkblue;
+}
+
+/* mouse over link */
+a:hover{
+    color:lightpink;
+}
+
+/* mini paragraphs about the games*/
+#abtgames{
+    width:500px; 
+    position:absolute;
+    bottom:300px;
+}
+
+/* selected link */
+a:active{
+    color:lightgreen;
+}
+
+/* social media */ 
+#ssn{
+    position: fixed;
+    bottom:50px;
+    right:50px;
+    text-align:right;
+}
+
+#regtxt{
+    font-size:10px;
+    position:absolute;
+    left:500px;
+    bottom:200px;
+}
+
+/* hr = horizontal rule (bottom line) css */
+hr.bline{
+border: 1px solid black;
+right: 50px;
+bottom: 100px;
+position:fixed;
+width: 500px;
+}
+
+/* hr = horizontal rule (top line) css */
+hr.tline{
+    border: 1px solid black;
+    top:100px;
+}
+
+
+#contact{
+    text-align: center;
+    position:absolute;
+    width: 400px;
+    height:300px;
+    left:500px;
+    bottom:250px;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: 25px;
+}
+
+#login{
+    text-align: center;
+    position:absolute;
+    width: 400px;
+    height:300px;
+    left:510px;
+    bottom:250px;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: 25px;
+}
+
+#about{
+    text-align: center;
+    position:absolute;
+    padding: 25px;
+    width:300px;
+    height:250px;
+    left:500px;
+    top:100px;
+    background-color:white;
+    border:solid black 3px;
+    border-radius: 25px;
+}
+
+.mathimg{
+    position:absolute;
+    left:100px;
+    bottom:20px;
+    width:400px;
+    height:200px;
+}
+
+.message{
+    border: solid black 2px;
+}
+
+.box{
+    border: solid black 2px;
+}
+
+.mfp-info{
+    font-size: 12px;
+}
+
+/* dropdown css */
+
+.dropdown {
+    position:relative;
+    display:inline-block;
+  }
+
+.ddcontent{
+    text-align: center;
+    display:none;
+    position: absolute;
+    right:10px;
+    background-color: white;
+    min-width: 200px;
+    z-index: 1;
+  }
+
+.ddcontent a{
+    display:block;
+}
+
+.ddcontent a:hover{
+    background-color:transparent;
+}
+
+.dropdown:hover .ddcontent{
+    display:block;
+}
+
+#addition, #subtraction, #multiplication, #division{
+    background-color:white;
+    border: solid black 2px;
+    text-align: center;
+    border-radius: 25px;
+    width:250px;
+    height:125px;
+    position: absolute;
+    left:550px;
+    top:150px;
+}
+
+
+#rules{
+    position:absolute;
+    top:70px;
+    left:50px;
+    text-align: left;
+    padding:10px;
+    margin:auto;
+    width:400px;
+    height:600px;
+    font-size: 20px;
+    border: black solid 3px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.mthfcts_photo{
+    position:absolute;
+    width:250px;
+    height:150px;
+    left:75px;
+    bottom:10px;
+}
+
+mark{
+    background-color:rgb(255, 255, 0);
+    color:black;
+    font-size: 14px;
+}
+
+#refresh{
+    position:absolute;
+    width:85px;
+    height:35px;
+    left:140px;
+    top:190px;
+}
+
+#aboutimg{
+    position:absolute;
+    height: 200px;
+    width: 300px;
+    right: 150px;
+    bottom: 130px;
+}
+
+#register{
+    padding:20px;
+    position:absolute;
+    width: 400px;
+    height:300px;
+    left:510px;
+    bottom:250px;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: 25px;
+    
+}
+
+.keypad{
+    padding:10px;
+    position:absolute;
+    left:75px;
+    top:150px;
+    width:100px;
+    height:100px;
+    border:black solid 2px;
+    background-color: white;
+    border-radius: 5px;
+}

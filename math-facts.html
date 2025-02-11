@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/nastyox/Rando.js@master/code/plain-javascript/2.0.0/rando-min.js"></script>
+</head>
+
+<body onload="randomNum();">
+    <p class="title">Play2Learn Logo</p>
+    <!-- LINKS IN HEADER -->
+    <div style="text-align:right;">
+        <a href="index.html">Home</a> |
+        <div class="dropdown">
+            <u style="color: darkblue;">Games</u> |
+            <div class="ddcontent">
+                <a href="math-facts.html">Math Facts</a>
+                <a href="#">Anagram Hunt</a>
+            </div>  
+        </div>
+        <a href="about.html">About</a> |
+        <a href="login.html">Login</a>
+    </div>
+
+    <hr class="tline">
+
+<!-- MATH FACTS RULES + INTRO -->
+<div id="rules">
+    <h4>Math Facts Practice</h4>
+      <img class="mthfcts_photo" src="https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/9b/ac/10/9bac107b-da28-4e94-21b3-eeef791eeaf4/source/512x512bb.jpg">
+      <div style="position:relative; top:20px;"> 
+          <p>1. Select operation.</p>
+          <p>2. Press <b>Go</b>.</p>
+          <p>3. How many problems can you solve in 30 seconds?</p>
+      </div>
+      <br>
+  <div>
+    <label>Please choose operation</label>
+    <select id="math" onchange="viewOptions(this)">
+        <option>Select</option>
+        <option data-show="addition">addition</option>
+        <option data-show="subtraction">subtraction</option>
+        <option data-show="multiplication">multiplication</option>
+        <option data-show="division">division</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="start();" style="position:absolute; right:200px; top:400px; font-size:25px; height:50px;" >Go</button>
+    <span class="bold" id="start"></span> seconds left
+    <div class="score-container">Score: <span class="score">0</span></div>
+    <mark>Please make sure the answer box is highlighted before you submit your answer!</mark>
+  </div>
+
+<!-- ADDITION GAME -->
+ <div style="display:none;" id="addition">
+        <p id="problem1">
+            <b>Problem:</b>
+            <span id="num1"></span>
+            <span class="plus">+</span>
+            <span id="num2"></span>
+            <span class="eauals">=</span>
+        </p>
+        <form name="key1" method="post" onsubmit="additionCheck(); return false;">
+            <input type="text" class="display" name="number1" id="answer1" placeholder="type answer">
+            <br>
+            <div class="keypad">
+            <input type="button" value="1" onclick="key1.number1.value+='1'">
+            <input type="button" value="2" onclick="key1.number1.value+='2'">
+            <input type="button" value="3" onclick="key1.number1.value+='3'">
+            <br>
+            <input type="button" value="4" onclick="key1.number1.value+='4'">
+            <input type="button" value="5" onclick="key1.number1.value+='5'">
+            <input type="button" value="6" onclick="key1.number1.value+='6'">
+            <br>
+            <input type="button" value="7" onclick="key1.number1.value+='7'">
+            <input type="button" value="8" onclick="key1.number1.value+='8'">
+            <input type="button" value="9" onclick="key1.number1.value+='9'">
+            <br>
+            <input type="button" value="0" onclick="key1.number1.value+='0'">
+            <input type="reset" value="c" onclick="key1.number1.value+=''">
+            <input type="button" value="🔄" onclick="window.location.reload();">
+            
+            </div>
+        </form>
+    </div>
+
+
+<!-- SUBTRACTION GAME -->
+
+<div style="display:none;" id="subtraction">
+    <p id="problem2">
+        <b>Problem:</b>
+        <span id="num3"></span>
+        <span class="minus">-</span>
+        <span id="num4"></span>
+    </p>
+    <form name="key2" method="post" onsubmit="subtractionCheck(); return false;">
+    <input type="text" name="number2" value="" class="display" onfocus="showPlus();" id="answer2" placeholder="type answer"/>
+    <br>
+    <div class="keypad">
+        <input type="button" value="1" onclick="key2.number2.value+='1'">
+        <input type="button" value="2" onclick="key2.number2.value+='2'">
+        <input type="button" value="3" onclick="key2.number2.value+='3'">
+        <br>
+        <input type="button" value="4" onclick="key2.number2.value+='4'">
+        <input type="button" value="5" onclick="key2.number2.value+='5'">
+        <input type="button" value="6" onclick="key2.number2.value+='6'">
+        <br>
+        <input type="button" value="7" onclick="key2.number2.value+='7'">
+        <input type="button" value="8" onclick="key2.number2.value+='8'">
+        <input type="button" value="9" onclick="key2.number2.value+='9'">
+        <br>
+        <input type="button" value="0" onclick="key2.number2.value+='0'">
+        <input type="button" value="c" onclick="key2.number2.value+=''">
+        <input type="button" value="🔄" onclick="window.location.reload();">
+    </div>        
+    </form>
+</div>
+
+
+ <!-- MULTIPLICATION GAME -->
+
+ <div style="display:none;" id="multiplication">
+    <p id="problem3">
+        <b>Problem:</b>
+        <span id="num5"></span>
+        <span class="times">x</span>
+        <span id="num6"></span>
+    </p>
+    <form name="key3" method="post" onsubmit="multiplicationCheck(); return false;">
+    <input name="number3" type="text" id="answer3" placeholder="type answer"/>
+    <br>
+    <div class="keypad">
+        <input type ="button" value= "1" onclick="key3.number3.value+='1'">
+        <input type ="button" value= "2" onclick="key3.number3.value+='2'">
+        <input type ="button" value= "3" onclick="key3.number3.value+='3'">
+        <br>
+        <input type ="button" value= "4" onclick="key3.number3.value+='4'">
+        <input type ="button" value= "5" onclick="key3.number3.value+='5'">
+        <input type ="button" value= "6" onclick="key3.number3.value+='6'">
+        <br>
+        <input type ="button" value= "7" onclick="key3.number3.value+='7'">
+        <input type ="button" value= "8" onclick="key3.number3.value+='8'">
+        <input type ="button" value= "9" onclick="key3.number3.value+='9'">
+        <br>
+        <input type ="button" value= "0" onclick="key3.number3.value+='0'">
+        <input type="reset" value="c" onclick="key3.number3.value+=''">
+        <input type="button" value="🔄" onclick="window.location.reload();">
+    </div> 
+    </form>
+</div>
+
+<!-- DIVISION CHECK -->
+<div style="display:none;" id="division">
+    <p id="problem4">
+        <b>Problem:</b>
+        <span id="num7"></span>
+        <span class="divide">÷</span>
+        <span id="num8"></span>
+    </p>
+    <form name="key4" method="post" onsubmit="divisionCheck(); return false;">
+        <input name="number4" type="text" id="answer4" placeholder="type answer"/>
+        <br>
+        <div class="keypad">
+            <input type="button" value="1" onclick="key4.number4.value+='1'">
+            <input type="button" value="2" onclick="key4.number4.value+='2'">
+            <input type="button" value="3" onclick="key4.number4.value+='3'">
+            <br>
+            <input type="button" value="4" onclick="key4.number4.value+='4'">
+            <input type="button" value="5" onclick="key4.number4.value+='5'">
+            <input type="button" value="6" onclick="key4.number4.value+='6'">
+            <br>
+            <input type="button" value="7" onclick="key4.number4.value+='7'">
+            <input type="button" value="8" onclick="key4.number4.value+='8'">
+            <input type="button" value="9" onclick="key4.number4.value+='9'">
+            <br>
+            <input type="button" value="0" onclick="key4.number4.value+='0'">
+            <input type="reset" value="c" onclick="key4.number4.value+=''">
+            <input type="button" value="🔄" onclick="window.location.reload();">
+        </div>
+    </form>
+</div>
+
+<hr class="bline">
+
+    <!-- SSN LINKS -->
+    <div id="ssn">
+        <p style="position:absolute; width:100px; right:250px; font-size: 10px;">© 2024 Play2Learn</p>
+        <a href="contact-us.html"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-contact-us.png"></a>
+        <a href="https://instagram.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-instagram.png"></a>
+        <a href="https://twitter.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-twitter.png"></a>
+        <a href="https://facebook.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-facebook.png"></a>
+    </div>
+</body>
+
+<script>
+
+  let container = document.querySelector('.container')
+  let input = document.querySelector("input");
+  let score = document.querySelector(".score");
+  let count = 0;
+
+function randomNum() {
+    var num1 = document.getElementById("num1");
+    var num2 = document.getElementById("num2");
+    var num3 = document.getElementById("num3");
+    var num4 = document.getElementById("num4");
+    var num5 = document.getElementById("num5");
+    var num6 = document.getElementById("num6");
+    var num7 = document.getElementById("num7");
+    var num8 = document.getElementById("num8");
+    num1.innerHTML = Math.ceil(Math.random() * 10);
+    num2.innerHTML = Math.ceil(Math.random() * 10);
+    num3.innerHTML = Math.ceil(Math.random() * 10);
+    num4.innerHTML = Math.ceil(Math.random() * 10);
+    num5.innerHTML = Math.ceil(Math.random() * 10);
+    num6.innerHTML = Math.ceil(Math.random() * 10);
+    num7.innerHTML = Math.ceil(Math.random() * 10);
+    num8.innerHTML = Math.ceil(Math.random() * 10);
+  }
+
+var current;
+function viewOptions(element) {
+    if(current!==undefined){
+        document.getElementById(current).setAttribute('style','display:none');
+    }
+    var fetchMe = element.options[element.selectedIndex].getAttribute('data-show');
+    if(fetchMe!==null){
+      document.getElementById(fetchMe).setAttribute('style','display:block'); 
+      current=fetchMe;
+    }
+}
+
+// ADDITION CHECK //
+function additionCheck() {
+    var num1 = parseInt(document.getElementById("num1").innerHTML, 10);
+    var num2 = parseInt(document.getElementById("num2").innerHTML, 10);
+    var answer = parseInt(document.getElementById("answer1").value, 10);
+    if (answer === num1 + num2) {
+        count++;
+          score.innerHTML = count;
+          num1.innerHTML = Math.ceil(Math.random() * 10);
+          num2.innerHTML = Math.ceil(Math.random() * 10);
+          input.value = "";
+    } else {
+       count--;
+          score.innerHTML = count;
+          input.value = "";
+    }
+    document.getElementById("answer1").value="";
+    randomNum();
+}
+// ADDITION CHECK //
+
+// SUBTRACTION CHECK //
+function subtractionCheck() {
+    var num3 = parseInt(document.getElementById("num3").innerHTML, 10);
+    var num4 = parseInt(document.getElementById("num4").innerHTML, 10);
+    var answer = parseInt(document.getElementById("answer2").value, 10);
+    if (answer === num3 - num4) {
+        count++;
+          score.innerHTML = count;
+          num3.innerHTML = Math.ceil(Math.random() * 10);
+          num4.innerHTML = Math.ceil(Math.random() * 10);
+          input.value = "";
+    } else {
+       count--;
+          score.innerHTML = count;
+          input.value = "";
+    }
+    document.getElementById("answer2").value="";
+    randomNum();
+}
+// SUBTRACTION CHECK //
+
+// MULTIPLICATION CHECK //
+function multiplicationCheck() {
+    var num5 = parseInt(document.getElementById("num5").innerHTML, 10);
+    var num6 = parseInt(document.getElementById("num6").innerHTML, 10);
+    var answer = parseInt(document.getElementById("answer3").value, 10);
+    if (answer === num5 * num6) {
+        count++;
+          score.innerHTML = count;
+          num5.innerHTML = Math.ceil(Math.random() * 10);
+          num6.innerHTML = Math.ceil(Math.random() * 10);
+          input.value = "";
+    } else {
+       count--;
+          score.innerHTML = count;
+          input.value = "";
+    }
+    document.getElementById("answer3").value="";
+    randomNum();
+}
+// MULTIPLICATION CHECK //
+
+// DIVISION CHECK //
+function divisionCheck() {
+    var num7 = parseInt(document.getElementById("num7").innerHTML, 10);
+    var num8 = parseInt(document.getElementById("num8").innerHTML, 10);
+    var answer = parseInt(document.getElementById("answer4").value, 10);
+    if (answer === num7 / num8) {
+        count++;
+          score.innerHTML = count;
+          num7.innerHTML = Math.ceil(Math.random() * 10);
+          num8.innerHTML = Math.ceil(Math.random() * 10);
+          input.value = "";
+    } else {
+       count--;
+          score.innerHTML = count;
+          input.value = "";
+    }
+    document.getElementById("answer4").value="";
+    randomNum();
+}
+// DIVISION CHECK //
+
+function startTimer() {
+    var counter = 31;
+    setInterval(function(){
+        counter--;
+        if (counter >= 0) {
+            span = document.getElementById('start');
+            span.innerHTML = counter;
+        }
+        if (counter === 0){
+            alert('Times up!\nIf you want to play again, press the refresh button!\nYour final score is '+score.innerHTML)
+        clearInterval(counter);
+        }
+    }, 1000);
+}
+
+function start(){
+    document.getElementById('start').style="color: green;";
+    startTimer()
+};
+</script>

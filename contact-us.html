@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- links in header beginning-->
+    <div style="text-align:right;">
+        <a href="index.html">Home</a> |
+        <div class="dropdown">
+            <u style="color: darkblue;">Games</u> |
+            <div class="ddcontent">
+                <a href="math-facts.html">Math Facts</a>
+                <a href="#">Anagram Hunt</a>
+            </div>  
+        </div>
+        <a href="about.html">About</a> |
+        <a href="login.html">Login</a>
+    </div>
+<!-- links in header ending -->
+
+    <hr class="tline">
+
+    <!-- Insert contact form here beginning-->
+    <div id="contact">
+        <h2>Contact Us</h2>
+        <div style= "position:absolute; top:100px; left:75px;">
+            <form onsubmit="formSubmitted()" style="font-size:16px;">
+                <br>
+                <label for="email">Email</label>
+                <input class="box" type="text" placeholder="Your Email..." name="email" required>
+                <br>
+                <br>
+                <label for="subject">Subject</label>
+                <input class="box" type="text" placeholder="Subject..." name="subject" required>
+                <br>
+                <br>
+                <label for="message">Message</label>
+                <input class="box" type="text" placeholder="Your message..." name="message" required>
+                <br>
+                <br>
+                    <input style="width:100px;" class="gamebttn" type="submit">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <!-- Insert contact form here ending-->
+
+
+    <hr class="bline">
+
+    <!-- ssn links beginning -->
+    <div id="ssn">
+        <p style="position:absolute; width:100px; right:250px; font-size: 10px;">© 2024 Play2Learn</p>
+        <a href="contact-us.html"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-contact-us.png"></a>
+        <a href="https://instagram.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-instagram.png"></a>
+        <a href="https://twitter.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-twitter.png"></a>
+        <a href="https://facebook.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-facebook.png"></a>
+    </div>
+    <!-- ssn links ending -->
+
+    <script>
+    function formSubmitted() {
+        alert("Thank you for reaching out to us!\n A representative will be in contact with you 2 - 4 busniess days.");
+    }
+    </script>
+
+</body>

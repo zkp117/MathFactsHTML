@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <p class="title">Play2Learn Logo</p>
+    <!-- links in header beginning-->
+    <div style="text-align:right;">
+            <a href="index.html">Home</a> |
+            <div class="dropdown">
+                <u style="color: darkblue;">Games</u> |
+                <div class="ddcontent">
+                    <a href="math-facts.html">Math Facts</a>
+                    <a href="#">Anagram Hunt</a>
+                </div>  
+            </div>
+            <a href="about.html">About</a> |
+            <a href="login.html">Login</a>
+        </div>
+    <!-- links in header ending -->
+
+    <hr class="tline">
+
+    <div>
+        
+    </div>
+
+    <!-- anagram hunt beginning-->
+    <div id="abtgames" style="left:90px;">
+
+        <div style="font-weight: bold;" id="switchQuotes"></div>
+
+        <br>
+
+        <p style="font-weight:bold; text-align:left; font-size:16px;">Anagram Hunt</p>
+        <p style="font-size:14px; text-align:left;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <br>
+            <button style="position:absolute;">play</button>
+    </div>
+    <!-- anagram hunt ending-->
+
+    <!-- math facts practice beginning-->
+    <div id="abtgames" style="right:90px;">
+        <p style="font-weight:bold; text-align:right; font-size:16px;">Math Facts Practice</p>
+        <p style="font-size:14px; text-align:right;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <br>
+            <button style="position:absolute;">play</button>
+    </div>
+
+    <div>
+         <img src="https://www.kiddy123.com/custom/domain_1/image_files/sitemgr_photo_16829.jpg" class="mathimg">
+    </div>
+    <!-- math facts practice ending-->
+
+    <hr class="bline">
+
+     <!-- ssn links beginning -->
+     <div id="ssn">
+        <p style="position:absolute; width:100px; right:250px; font-size: 10px;">© 2024 Play2Learn</p>
+        <a href="contact-us.html"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-contact-us.png"></a>
+        <a href="https://instagram.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-instagram.png"></a>
+        <a href="https://twitter.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-twitter.png"></a>
+        <a href="https://facebook.com"><img src="https://webucator-django.s3.amazonaws.com/media/public/products/project/5/icon-facebook.png"></a>
+    </div>
+    <!-- ssn links ending -->
+
+    <script>
+        var text = ["'This website really helped my daughter who was struggling with addition problems' - Linda Smith",
+        "'I use Play2Learn for my first grade students all the time, they really love it!' - Andrea Miller, Teacher at Westington Elementary School",
+        "'During the summer my kids will use the different options for practicing math when they're not in school' - Peter Willson "];
+        var counter = 0;
+        var elem = document.getElementById("switchQuotes");
+        var inst = setInterval(change, 12000);
+
+        setTimeout(change,10);
+
+       function change(){
+        elem.innerHTML = text[counter];
+        counter++;
+        if (counter >= text.length){
+            counter = 0;
+        }
+       };
+
+    </script>
+
+</body>
